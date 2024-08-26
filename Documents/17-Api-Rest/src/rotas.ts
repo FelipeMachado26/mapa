@@ -1,6 +1,6 @@
 //Roteadorda aplicaçaõ
 import {Router} from 'express'
-import { detalhar, listar } from './controladores/instrutores'
+import { cadastrar, detalhar, listar } from './controladores/instrutores'
 
 
 const rotas  = Router()
@@ -13,7 +13,7 @@ rotas.get('/instrutores',listar)
 rotas.get('/instrutores/:id',detalhar)
 
 //cadastrar instrutor
-
+rotas.post('/instrutores',cadastrar)
 
 //editar um instrutor
 //excluir um instrutor
