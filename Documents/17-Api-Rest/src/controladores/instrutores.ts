@@ -19,9 +19,28 @@ const instrutores :Tinstrutores[] = [{
 
 ]
 
+// iremos implementar todos os controladores especificos para os instrutores
+
 export function listar (req:Request,res:Response) {
     return res.status(200).json(instrutores)
     
 }
 
-// iremos implementar todos os controladores especificos para os instrutores
+
+
+export function detalhar (req:Request,res:Response) {
+ 
+    const { id } = req.params
+
+    const instrutor = instrutores.find((item) =>{
+        return item.id === Number(id)
+    })
+
+    if(!instrutor){
+        return res.status(404).json({
+            mensagem: 'instrutor nao encontrado(a)'
+        })
+    }
+    return res.status(200).json(instrutores)
+}
+

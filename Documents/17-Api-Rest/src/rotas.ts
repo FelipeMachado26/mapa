@@ -1,22 +1,20 @@
 //Roteadorda aplicaçaõ
 import {Router} from 'express'
-import { listar } from './controladores/instrutores'
+import { detalhar, listar } from './controladores/instrutores'
 
 
 const rotas  = Router()
+//Criado a API REST:
 
 //Listar todos instrutores
 rotas.get('/instrutores',listar)
 
+//detalhar as informações de um instrutor
+rotas.get('/instrutores/:id',detalhar)
 
-//Criado a API REST:
-
-
-//Listar todos instrutores
-
-
-//detralhar as informações de um instrutor
 //cadastrar instrutor
+
+
 //editar um instrutor
 //excluir um instrutor
 
